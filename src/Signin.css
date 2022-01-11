@@ -1,0 +1,24 @@
+body {
+    background-color: #282c34;
+  }
+
+
+  
+  .box{
+      margin-top: 150px;
+       background-color: rgb(167, 166, 175);
+      border-radius: 1em;
+  }
+
+  h1{
+    color: #e1e1ee;
+    font-size: 45px;
+    padding: 0px;
+    margin-top: 100px;
+    
+    
+  }
+
+  p{
+      color: black;
+  }

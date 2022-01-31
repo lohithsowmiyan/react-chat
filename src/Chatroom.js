@@ -10,7 +10,7 @@ export default function Chatroom() {
     
     const newCollectionRef = collection(db,'message');
 
-    const [message,setMessage]= useState({})
+    const [message,setMessage]= useState([])
     
      useEffect(() => {
         const getMessage = async ()=>{
@@ -51,7 +51,7 @@ export default function Chatroom() {
 
     return (
         <>
-            <Signout/>
+            <NavBar/>
             <main>
              
             { message.map((chat)=>{ return(<ChatMessage key={chat.id}  message={chat}/>)})}
@@ -69,7 +69,7 @@ export default function Chatroom() {
  function ChatMessage(props){
    const {text,uid,photoURL}=props.message
 
-    const messagetype = uid === auth.currentUser.uid ? 'sent' : 'recieved';
+    const messagetype = uid === auth.currentUser.uid ? 'sent' : 'received';
     //console.log(messagetype)
     return(
         <>
@@ -81,6 +81,18 @@ export default function Chatroom() {
 
     )
 } 
+function NavBar(){
+    return(
+   <Navbar variant ='primary'>
+       <Container>
+           <Navbar.Brand style={{color:'ghostwhite', fontSize:'30px'}}>
+               My Chat App
+           </Navbar.Brand>  
+           <Signout/>  
+       </Container>
+   </Navbar>
+    )
+}
 
-/**/
+
 
